@@ -1,0 +1,2 @@
+import { LegalPage } from "@/components/legal-page";
+export default function CancellationPolicyPage() { return <LegalPage title="Cancellation & refund policy"><p>A business-approved cancellation and refund policy is required before online booking can be enabled. Policies may vary by package, departure date, supplier commitments and payment status.</p><p>Contact Shri Swami Travels directly to understand the cancellation terms applicable to your proposed trip.</p></LegalPage>; }

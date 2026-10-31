@@ -1,0 +1,5 @@
+import Link from "next/link";
+import { siteConfig } from "@/config/site";
+import { PageHero } from "@/components/page-hero";
+import { SiteLayout } from "@/components/site-layout";
+export default function BookingPage() { return <SiteLayout><PageHero eyebrow="Travel enquiry" title="Tell us where you would like to go." copy="Online reservations are not yet enabled. Our team will first confirm the itinerary, availability and price for your preferred journey." /><main className="bg-white"><div className="mx-auto max-w-3xl px-5 py-14 text-center lg:px-8"><p className="mx-auto max-w-xl text-slate-600">For the fastest response, call with your destination, travel date, traveller count and pickup location.</p><a href={`tel:${siteConfig.primaryContactNumber}`} className="mt-6 inline-block rounded-md bg-blue-950 px-6 py-3 font-semibold text-white">Call {siteConfig.primaryContactNumber}</a><Link href="/contact" className="ml-4 inline-block font-semibold text-amber-700">Other contact options →</Link></div></main></SiteLayout>; }

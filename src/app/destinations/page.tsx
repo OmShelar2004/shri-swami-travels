@@ -1,0 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
+import { packages } from "@/config/content";
+import { PageHero } from "@/components/page-hero";
+import { SiteLayout } from "@/components/site-layout";
+
+export default function DestinationsPage() {
+  return <SiteLayout><PageHero eyebrow="Destinations" title="India has more to show you." copy="From Maharashtra's hill stations to Himalayan valleys and southern escapes, explore places we can help you reach." /><main className="bg-white"><div className="mx-auto max-w-7xl px-5 py-14 lg:px-8"><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{packages.map((item) => <Link key={item.slug} href={`/packages/${item.slug}`} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-amber-400 hover:shadow-lg"><div className="relative h-40 overflow-hidden bg-gradient-to-br from-blue-950 via-blue-800 to-sky-700">{item.image ? <Image src={item.image} alt={item.imageAlt} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" /> : <div className="flex h-full items-end bg-[radial-gradient(circle_at_75%_15%,rgba(251,191,36,.9),transparent_12rem)] p-5"><span className="text-sm font-bold tracking-[.15em] text-white/80 uppercase">{item.tag}</span></div>}</div><div className="p-5"><p className="text-xs font-bold tracking-[.14em] text-amber-700 uppercase">{item.tag}</p><h2 className="mt-2 text-xl font-bold text-blue-950">{item.name}</h2><p className="mt-2 min-h-10 text-sm leading-5 text-slate-600">{item.summary}</p><p className="mt-4 text-sm font-semibold text-blue-800">Explore journey details <span aria-hidden="true">→</span></p></div></Link>)}</div></div></main></SiteLayout>;
+}

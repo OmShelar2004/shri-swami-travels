@@ -1,0 +1,2 @@
+import { LegalPage } from "@/components/legal-page";
+export default function PrivacyPage() { return <LegalPage title="Privacy policy"><p>Shri Swami Travels is preparing its privacy policy. The final approved policy will explain what personal information is collected, why it is used, how long it is kept, and how customers can contact the business about their data.</p><p>No online booking data is collected through this foundation website.</p></LegalPage>; }

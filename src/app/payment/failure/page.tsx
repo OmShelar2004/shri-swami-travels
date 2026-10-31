@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { SiteLayout } from "@/components/site-layout";
+export default function PaymentFailurePage() { return <SiteLayout><main className="mx-auto max-w-2xl px-5 py-28 text-center"><p className="text-sm font-bold tracking-[.18em] text-amber-700 uppercase">Payment status</p><h1 className="mt-4 text-4xl font-semibold text-slate-950">No payment was attempted.</h1><p className="mt-5 leading-7 text-slate-600">Online payments are not yet enabled. Please contact the travel team if you need help with a travel enquiry.</p><Link href="/contact" className="mt-8 inline-block font-semibold text-amber-700">Contact us →</Link></main></SiteLayout>; }

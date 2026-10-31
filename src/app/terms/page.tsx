@@ -1,0 +1,2 @@
+import { LegalPage } from "@/components/legal-page";
+export default function TermsPage() { return <LegalPage title="Terms & conditions"><p>Terms for tours, vehicle rental, booking, payment, cancellation and customer responsibilities will be published after they are reviewed and approved by Shri Swami Travels.</p><p>Please confirm the applicable terms with the travel team before making an arrangement.</p></LegalPage>; }

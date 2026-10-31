@@ -1,0 +1,9 @@
+import Link from "next/link";
+import { packages } from "@/config/content";
+import { PageHero } from "@/components/page-hero";
+import { SiteLayout } from "@/components/site-layout";
+import { PackageVisual } from "@/components/package-visual";
+
+const filters = ["All", "Hill Stations", "Beaches", "Pilgrimage", "South India", "Daily Tours"];
+
+export default function PackagesPage() { return <SiteLayout><PageHero eyebrow="Explore India" title="Tour Packages" copy="Beautiful destinations across India, planned with a focus on comfort and clear travel arrangements." /><main className="bg-white"><div className="mx-auto max-w-7xl px-5 py-10 lg:px-8"><div className="flex flex-wrap gap-2" aria-label="Package categories">{filters.map((filter, index) => <span key={filter} className={`rounded-full border px-4 py-2 text-xs font-bold ${index === 0 ? "border-blue-800 bg-blue-800 text-white" : "border-slate-200 bg-white text-slate-600"}`}>{filter}</span>)}</div><div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{packages.map((tour) => <article key={tour.slug} className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-amber-400 hover:shadow-lg"><PackageVisual image={tour.image} imageAlt={tour.imageAlt} label={tour.tag} /><div className="p-4"><h2 className="font-bold text-blue-950">{tour.name}</h2><p className="mt-1 text-xs text-slate-500">{tour.duration}</p><p className="mt-3 text-sm leading-6 text-slate-600">{tour.summary}</p><div className="mt-4 flex items-center justify-between"><span className="text-xs font-bold text-slate-700">Details on request</span><Link href={`/packages/${tour.slug}`} aria-label={`View ${tour.name}`} className="grid h-8 w-8 place-items-center rounded-full bg-slate-100 font-bold text-blue-950">→</Link></div></div></article>)}</div></div></main></SiteLayout>; }
