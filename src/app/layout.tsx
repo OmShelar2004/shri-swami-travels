@@ -6,10 +6,16 @@ export const metadata: Metadata = {
   description: "Domestic tours, pilgrimages, sightseeing, and vehicle rentals.",
 };
 
+import { LanguageProvider } from "@/context/language-context";
+import { VisualEnhancements } from "@/components/visual-enhancements";
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <LanguageProvider><VisualEnhancements />{children}</LanguageProvider>
+      </body>
     </html>
   );
 }
+
